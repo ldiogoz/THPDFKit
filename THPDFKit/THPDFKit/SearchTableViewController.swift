@@ -85,7 +85,7 @@ class SearchTableViewController: UITableViewController {
         
         let outlintstr = outline?.label ?? ""
         let pagestr = page.label ?? ""
-        let txt = outlintstr + " \(NSLocalizedString("Page", comment: "To be translated")):  " + pagestr
+        let txt = outlintstr + " Página " + pagestr
         cell.destinationLabel.text = txt
         
         let extendSelection = selection.copy() as! PDFSelection
