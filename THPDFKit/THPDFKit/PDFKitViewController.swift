@@ -168,7 +168,7 @@ open class PDFKitViewController: UIViewController, PDFViewController {
         })
         
         pdfView.maxScaleFactor = 5.0
-        pdfView.minScaleFactor = pdfView.scaleFactorForSizeToFit - 0.1
+        pdfView.minScaleFactor = (pdfView.scaleFactorForSizeToFit) - 0.1
         
         updateOrientation(landscape: UIApplication.shared.statusBarOrientation.isLandscape)
     }
@@ -326,6 +326,8 @@ open class PDFKitViewController: UIViewController, PDFViewController {
                     if let scaleFactorForSizeToFit = self?.pdfView.scaleFactorForSizeToFit {
                         self?.pdfView.scaleFactor = scaleFactorForSizeToFit
                     }
+                    self?.pdfView.maxScaleFactor = 5.0
+                    self?.pdfView.minScaleFactor = (self?.pdfView.scaleFactorForSizeToFit)! - 0.1
                     UIView.animate(withDuration:CATransaction.animationDuration(), animations: {
                         self?.pdfView.alpha = 1.0
                     })
@@ -345,6 +347,8 @@ open class PDFKitViewController: UIViewController, PDFViewController {
                     if let scaleFactorForSizeToFit = self?.pdfView.scaleFactorForSizeToFit {
                         self?.pdfView.scaleFactor = scaleFactorForSizeToFit
                     }
+                    self?.pdfView.maxScaleFactor = 5.0
+                    self?.pdfView.minScaleFactor = (self?.pdfView.scaleFactorForSizeToFit)! - 0.1
                     UIView.animate(withDuration:CATransaction.animationDuration(), animations: {
                         self?.pdfView.alpha = 1.0
                     })
@@ -388,6 +392,8 @@ open class PDFKitViewController: UIViewController, PDFViewController {
                 if let scaleFactorForSizeToFit = self?.pdfView.scaleFactorForSizeToFit {
                     self?.pdfView.scaleFactor = scaleFactorForSizeToFit
                 }
+                self?.pdfView.maxScaleFactor = 5.0
+                self?.pdfView.minScaleFactor = (self?.pdfView.scaleFactorForSizeToFit)! - 0.1
                 UIView.animate(withDuration:CATransaction.animationDuration(), animations: {
                     self?.pdfView.alpha = 1.0
                 })
