@@ -166,6 +166,10 @@ open class PDFKitViewController: UIViewController, PDFViewController {
             swipeGesture.cancelsTouchesInView = false
             self.pdfView.addGestureRecognizer(swipeGesture)
         })
+        
+        pdfView.maxScaleFactor = 5.0
+        pdfView.minScaleFactor = pdfView.scaleFactorForSizeToFit - 0.1
+        
         updateOrientation(landscape: UIApplication.shared.statusBarOrientation.isLandscape)
     }
     
