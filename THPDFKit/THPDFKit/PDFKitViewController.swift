@@ -184,7 +184,7 @@ open class PDFKitViewController: UIViewController, PDFViewController {
     }
     
     func addToolButtons(stackView: UIStackView) {
-        let buttons: [[String: Any]] = [["imagename": "btn-thumbnails", "selector": #selector(thumbButtonClick(_:))],
+        let buttons: [[String: Any]] = [
                                         ["imagename": "btn-outline", "selector": #selector(outlineButtonClick(_:))],
                                         ["imagename": "btn-bookmark", "selector": #selector(bookmarkButtonClick(_:))],
                                         ["imagename": "btn-search", "selector": #selector(searchButtonClick(_:))]]
