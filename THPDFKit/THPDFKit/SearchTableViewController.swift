@@ -24,6 +24,8 @@ class SearchTableViewController: UITableViewController {
         searchBar.delegate = self
         searchBar.showsCancelButton = true
         searchBar.searchBarStyle = .minimal
+        searchBar.tintColor = .black
+        (searchBar.value(forKey: "cancelButton") as! UIButton).setTitle("Cancelar", for: .normal)
         
         return searchBar
         }()

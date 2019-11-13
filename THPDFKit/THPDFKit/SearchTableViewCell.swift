@@ -17,6 +17,7 @@ class SearchTableViewCell: UITableViewCell {
         label.backgroundColor = UIColor.clear
         label.font = UIFont.boldSystemFont(ofSize: 17.0)
         
+        
         return label
     }()
     
