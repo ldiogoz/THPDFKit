@@ -184,32 +184,7 @@ open class PDFKitViewController: UIViewController, PDFViewController {
     }
     
     func addToolButtons(stackView: UIStackView) {
-        let buttons: [[String: Any]] = [
-                                        ["imagename": "btn-outline", "selector": #selector(outlineButtonClick(_:))],
-                                        ["imagename": "btn-bookmark", "selector": #selector(bookmarkButtonClick(_:))],
-                                        ["imagename": "btn-search", "selector": #selector(searchButtonClick(_:))]]
-        for buttonDic in buttons {
-            guard let imagename = buttonDic["imagename"] as? String, let selector = buttonDic["selector"] as? Selector else {
-                print("coding error, buttons are wrong")
-                continue
-            }
-            if stackView.arrangedSubviews.count > 0 {
-                let view = UIView()
-                view.backgroundColor = tintColor
-                view.heightAnchor.constraint(equalToConstant: 44).isActive = true
-                view.widthAnchor.constraint(equalToConstant: 1).isActive = true
-                stackView.addArrangedSubview(view)
-            }
-            
-            let button = UIButton(type: .custom)
-            button.setImage(UIImage(named: imagename, in: Bundle(for: PDFKitViewController.classForCoder()), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor = tintColor
-            button.heightAnchor.constraint(equalToConstant: 44).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 88).isActive = true
-            button.addTarget(self, action: selector, for: .touchUpInside)
-            button.backgroundColor = .clear
-            stackView.addArrangedSubview(button)
-        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonClick(_:)))
     }
     
     // MARK: - Button Actions
